@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "circuito")
+@Table(name = "circuitos")
 public class Circuito {
 
     @Id
@@ -34,6 +34,12 @@ public class Circuito {
     public Circuito(String nombre, String localidad) {
         this.nombre = nombre;
         this.localidad = localidad;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Circuito [id=" + id + ", nombre=" + nombre + ", localidad=" + localidad + "]";
     }
 
     

@@ -1,5 +1,5 @@
 
-INSERT INTO piloto (id, nombre, conducción) VALUES
+INSERT INTO pilotos (id, nombre, conducción) VALUES
 (1, 'Marc Márquez', 'agresiva'),
 (2, 'Valentino Rossi', 'temeraria'),
 (3, 'Fabio Quartararo', 'pasiva'),
@@ -11,7 +11,7 @@ INSERT INTO piloto (id, nombre, conducción) VALUES
 (9, 'Brad Binder', 'agresiva'),
 (10, 'Enea Bastianini', 'temeraria');
 
-INSERT INTO circuito (id, nombre, localidad) VALUES
+INSERT INTO circuitos (id, nombre, localidad) VALUES
 (1, 'Losail', 'Catar'),
 (2, 'Termas de Río Hondo', 'Argentina'),
 (3, 'Austin', 'Estados Unidos'),
