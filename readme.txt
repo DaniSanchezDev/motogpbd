@@ -1,3 +1,5 @@
+ENUNCIADO EJERCICIO MOTOGP BD
+
 Ejercicio 1:
 Crear los entities de las 3 tablas
 
