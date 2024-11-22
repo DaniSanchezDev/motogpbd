@@ -1,6 +1,6 @@
 package edu.liceo.daniel.motogp.model.entities;
 
-import edu.liceo.daniel.motogp.model.enumerated.posicion;
+import edu.liceo.daniel.motogp.model.enumerated.Posicion;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -25,5 +25,5 @@ public class Carreras {
     private String temporada;
     @Enumerated(EnumType.STRING)
     // revisar porque no puedo poner en mayusculas el enum y cambiar el sql 
-    private posicion posicion;
+    private Posicion posicion;
 }
