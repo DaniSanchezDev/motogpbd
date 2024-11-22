@@ -1,5 +1,7 @@
 package edu.liceo.daniel.motogp.model.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import edu.liceo.daniel.motogp.model.enumerated.Posicion;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -21,6 +23,7 @@ public class Carrera {
     private Integer id;
     @ManyToOne
     @JoinColumn(name = "id_piloto")
+    @JsonIgnore
     private Piloto idPiloto;
     @ManyToOne
     @JoinColumn(name = "id_circuito")

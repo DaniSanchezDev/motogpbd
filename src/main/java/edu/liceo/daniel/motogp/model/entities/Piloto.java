@@ -1,13 +1,18 @@
 package edu.liceo.daniel.motogp.model.entities;
 
+import java.util.List;
+
 import edu.liceo.daniel.motogp.model.enumerated.Conduccion;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -22,6 +27,8 @@ public class Piloto {
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private Conduccion conduccion;
+    @OneToMany(mappedBy = "idPiloto", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Carrera> listaCarreras;
 
 
     public Piloto() {
