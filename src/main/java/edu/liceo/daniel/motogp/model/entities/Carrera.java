@@ -8,6 +8,8 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -17,27 +19,29 @@ public class Carrera {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(nullable = false)
-    private Integer idPiloto;
-    @Column(nullable = false)
-    private Integer idCircuito;
+    @ManyToOne
+    @JoinColumn(name = "id_piloto")
+    private Piloto idPiloto;
+    @ManyToOne
+    @JoinColumn(name = "id_circuito")
+    private Circuito idCircuito;
     @Column(length = 10,nullable = false)
     private String temporada;
     @Enumerated(EnumType.STRING)
     // revisar porque no puedo poner en mayusculas el enum y cambiar el sql 
     private Posicion posicion;
 
-    
+
     public Carrera() {
     }
-    public Carrera(Integer id, Integer idPiloto, Integer idCircuito, String temporada, Posicion posicion) {
+    public Carrera(Integer id, Piloto idPiloto, Circuito idCircuito, String temporada, Posicion posicion) {
         this.id = id;
         this.idPiloto = idPiloto;
         this.idCircuito = idCircuito;
         this.temporada = temporada;
         this.posicion = posicion;
     }
-    public Carrera(Integer idPiloto, Integer idCircuito, String temporada, Posicion posicion) {
+    public Carrera(Piloto idPiloto, Circuito idCircuito, String temporada, Posicion posicion) {
         this.idPiloto = idPiloto;
         this.idCircuito = idCircuito;
         this.temporada = temporada;
@@ -49,16 +53,16 @@ public class Carrera {
     public void setId(Integer id) {
         this.id = id;
     }
-    public Integer getIdPiloto() {
+    public Piloto getIdPiloto() {
         return idPiloto;
     }
-    public void setIdPiloto(Integer idPiloto) {
+    public void setIdPiloto(Piloto idPiloto) {
         this.idPiloto = idPiloto;
     }
-    public Integer getIdCircuito() {
+    public Circuito getIdCircuito() {
         return idCircuito;
     }
-    public void setIdCircuito(Integer idCircuito) {
+    public void setIdCircuito(Circuito idCircuito) {
         this.idCircuito = idCircuito;
     }
     public String getTemporada() {
