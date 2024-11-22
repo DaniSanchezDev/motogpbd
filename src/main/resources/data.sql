@@ -23,7 +23,7 @@ INSERT INTO circuitos (id, nombre, localidad) VALUES
 (9, 'Misano', 'San Marino'),
 (10, 'Phillip Island', 'Australia');
 
-INSERT INTO carreras (id, id_piloto, id_circuito, temporada, posición) VALUES
+INSERT INTO carreras (id, idPiloto, idCircuito, temporada, posición) VALUES
 (1, 1, 1, '2023', 3),
 (2, 2, 1, '2023', 5),
 (3, 3, 1, '2023', 1),
