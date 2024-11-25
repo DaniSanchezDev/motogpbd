@@ -41,6 +41,7 @@ public class Carrera {
 
     public Carrera() {
     }
+    
     public Carrera(Integer id, Piloto piloto, Circuito circuito, String temporada, Posicion posicion) {
         this.id = id;
         this.piloto = piloto;
@@ -48,6 +49,7 @@ public class Carrera {
         this.temporada = temporada;
         this.posicion = posicion;
     }
+
     public Carrera(Piloto piloto, Circuito circuito, String temporada, Posicion posicion) {
         this.piloto = piloto;
         this.circuito = circuito;
