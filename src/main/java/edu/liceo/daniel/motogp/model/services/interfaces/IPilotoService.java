@@ -7,5 +7,6 @@ import edu.liceo.daniel.motogp.model.entities.Piloto;
 public interface IPilotoService {
 
     public List<Piloto> conseguirPilotos();
+    public Piloto conseguirPiloto(Integer id);
 
 }

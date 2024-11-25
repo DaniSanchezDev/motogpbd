@@ -1,6 +1,7 @@
 package edu.liceo.daniel.motogp.model.services.implementations;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +17,15 @@ public class PilotoService implements IPilotoService {
     @Override
     public List<Piloto> conseguirPilotos() {
        return pilotosRepo.findAll();
+    }
+// con el findbyid hay que usar el optional para evitar errores
+    @Override
+    public Piloto conseguirPiloto(Integer id) {
+        Optional<Piloto> op = pilotosRepo.findById(id);
+        if (op.isPresent()) {
+            return op.get();
+        }
+        return null;
     }
 
 }
