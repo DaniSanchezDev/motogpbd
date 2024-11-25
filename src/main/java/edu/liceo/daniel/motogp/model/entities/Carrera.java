@@ -34,11 +34,11 @@ public class Carrera {
     @Column(length = 10,nullable = false)
     private String temporada;
 
-    @Enumerated(EnumType.STRING)
-    // revisar porque no puedo poner en mayusculas el enum y cambiar el sql 
-    private Posicion posicion;
+    @Enumerated(EnumType.ORDINAL) // maneja el enum como si fueran ints
+    @Column(length = 10, nullable = false)
+    private Posicion posicion;  
 
-    
+
     public Carrera() {
     }
     public Carrera(Integer id, Piloto piloto, Circuito circuito, String temporada, Posicion posicion) {

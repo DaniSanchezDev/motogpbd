@@ -20,10 +20,13 @@ public class Circuito {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     @Column(length = 50, nullable = false, unique = true)
     private String nombre;
+
     @Column(length = 70, nullable = false)
     private String localidad;
+    
     @OneToMany(mappedBy = "circuito", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Carrera> listaCarreras;
 
