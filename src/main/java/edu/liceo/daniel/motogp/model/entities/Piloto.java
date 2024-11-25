@@ -27,7 +27,7 @@ public class Piloto {
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private Conduccion conduccion;
-    @OneToMany(mappedBy = "idPiloto", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "piloto", cascade = CascadeType.ALL, fetch = FetchType.EAGER) // el cascade hace que si borramos un piloto nos borre las carreras que participo por ej
     private List<Carrera> listaCarreras;
 
 
